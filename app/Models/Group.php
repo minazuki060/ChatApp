@@ -4,7 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
-use App\Models\Chat;
+use App\Models\Message;
 
 
 class Group extends Model
@@ -15,9 +15,9 @@ class Group extends Model
         'name',
     ];
 
-    public function chat()
+    public function message()
     {
-        return $this->hasOne(Chat::class);
+        return $this->hasOne(Message::class);
     }
 
 }

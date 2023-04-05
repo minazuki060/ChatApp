@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Laravel\Sanctum\HasApiTokens;
-use App\Models\Chat;
+use App\Models\Message;
 
 
 class User extends Authenticatable
@@ -44,8 +44,8 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
     ];
 
-    public function chat()
+    public function message()
     {
-        return $this->hasOne(Chat::class);
+        return $this->hasOne(Message::class);
     }
 }
