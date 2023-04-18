@@ -1,0 +1,29 @@
+@charset "utf-8";
+* {
+    margin:0;
+    padding:0;
+    }
+    .head {
+        background-color:#83fdff;
+        height:100px;
+    }
+
+
+    body {
+        font-family:'Noto Sans JP',sans-serif;
+        background-color:#f6f5f4;
+    }
+
+
+    .title {
+        text-align:center;
+    }
+
+    
+    .search {
+        text-align:center;
+    }
+
+    .namelist {
+        text-align:center;
+    }

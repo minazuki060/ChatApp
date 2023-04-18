@@ -11,11 +11,11 @@
 
     <main>
         <div class="side">
-         <p>サイドバー</p>
+         <p></p>
         </div> 
 
         <div class="content">
-         <p>メインコンテンツ</p>
+         <p></p>
         </div>
     </main>
  </div>
@@ -29,7 +29,7 @@
     </head>
 
      <div class="sp-content">
-        <p>メインコンテンツ</p>
+        <p></p>
      </div>
  </div>
 </html>
