@@ -11,7 +11,7 @@ use \App\Models\Message;
 
 class HomeController extends Controller
 {
-    //トークルーム一覧を表示
+    //homeでトークルーム一覧を表示
 public function showRoomList()
 {
     $user = Auth::user();
@@ -26,13 +26,19 @@ public function showRoomList()
 }
 
 
-
-    public function index($groupId)
+//home/groupidでトークルームを一覧表示
+    public function index()
     {
-    $groups = Auth::user()->groups;
-    $group = Group::find($groupId);
+        $user = Auth::user();
+    if (!$user) {
+        return redirect()->route('login');
+    }
+    $groups = Group::whereHas('users', function ($query) use ($user) {
+        $query->where('user_id', $user->id);
+    })->get();
+    $groups = $groups ?? [];
 
-    return view('home', compact('groups', 'group'));
+        return view('home', compact('groups'));
     }
 
 

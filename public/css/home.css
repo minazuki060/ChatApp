@@ -28,8 +28,9 @@ body {
    text-align:center;
  }
  
- main {
-   display:flex;/*サイドバーとメインコンテンツを横並びにする指定をした*/
+   main {
+    display: flex;
+    flex-direction: row;/*サイドバーとメインコンテンツを横並びにする指定をした*/
  }
 
 
