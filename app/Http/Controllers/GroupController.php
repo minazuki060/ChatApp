@@ -64,6 +64,7 @@ class GroupController extends Controller
         $group->save();
 
         $users = $request->input('users');
+        $users[] = Auth::id(); // ログインしているユーザーのIDを追加
         $group->users()->attach($users);// 選択したユーザーをトークルームに参加させる
 
         return redirect()->route('home.index');

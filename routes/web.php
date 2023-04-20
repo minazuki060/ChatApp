@@ -20,8 +20,9 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/home', [HomeController::class, 'index'])->name('home.index');
-Route::post('/home', [HomeController::class, 'index'])->name('message.store');
+Route::get('/home', [HomeController::class, 'showRoomList'])->name('home.list');
+Route::get('/home/{groupId}', [HomeController::class, 'index'])->name('home.index');
+Route::post('/home/{groupId}', [HomeController::class, 'store'])->name('message.store');
 
 Route::get('/group/create', [GroupController::class, 'create'])->name('group.create');
 Route::post('/group/create', [GroupController::class, 'store'])->name('group.store');
