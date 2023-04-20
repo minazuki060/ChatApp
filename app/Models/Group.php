@@ -5,7 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use App\Models\Message;
-
+use App\Models\User;
 
 class Group extends Model
 {
@@ -20,4 +20,8 @@ class Group extends Model
         return $this->hasOne(Message::class);
     }
 
+    public function users()
+    {
+        return $this->belongsToMany(User::class);
+    }
 }

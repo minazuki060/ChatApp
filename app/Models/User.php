@@ -10,6 +10,8 @@ use Laravel\Fortify\TwoFactorAuthenticatable;
 use Laravel\Jetstream\HasProfilePhoto;
 use Laravel\Sanctum\HasApiTokens;
 use App\Models\Message;
+use App\Models\Group;
+
 
 class User extends Authenticatable
 {
@@ -56,6 +58,11 @@ class User extends Authenticatable
         return $this->hasOne(Message::class);
     }
 
+    
+    public function Group()
+    {
+        return $this->belongsToMany(Group::class);
+    }
     /**
      * The accessors to append to the model's array form.
      *public function message()
