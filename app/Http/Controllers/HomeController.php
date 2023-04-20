@@ -31,7 +31,6 @@ public function showRoomList()
     {
     $groups = Auth::user()->groups;
     $group = Group::find($groupId);
-    $messages = $group->messages;
 
     return view('home', compact('groups', 'group'));
     }

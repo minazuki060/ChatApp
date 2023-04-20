@@ -9,7 +9,7 @@
         </div> 
     </head>
 
-
+   
     <main>
         <div class="side">
         <h1>グループ一覧</h1>
