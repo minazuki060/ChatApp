@@ -11,34 +11,41 @@ use \App\Models\Message;
 
 class HomeController extends Controller
 {
-    //homeでトークルーム一覧を表示
-public function showRoomList()
-{
-    $user = Auth::user();
-    if (!$user) {
-        return redirect()->route('login');
-    }
-    $groups = Group::whereHas('users', function ($query) use ($user) {
-        $query->where('user_id', $user->id);
-    })->get();
-    $groups = $groups ?? []; // nullの場合は空の配列にする
-    return view('home', compact('groups'));
-}
-
-
-//home/groupidでトークルームを一覧表示
-    public function index()
+    //sideでトークルーム一覧を表示
+    public function showRoomList()
     {
         $user = Auth::user();
-    if (!$user) {
-        return redirect()->route('login');
-    }
-    $groups = Group::whereHas('users', function ($query) use ($user) {
-        $query->where('user_id', $user->id);
-    })->get();
-    $groups = $groups ?? [];
+        if (!$user) {
+            return redirect()->route('login');
+        }
+        $groups = Group::whereHas('users', function ($query) use ($user) {
+            $query->where('user_id', $user->id);
+        })->get();
+        $groups = $groups ?? []; // nullの場合は空の配列にする
 
         return view('home', compact('groups'));
+    }
+
+
+    //home/groupidでトークルームを一覧表示し、グループのメッセージを一覧表示する
+    public function index(Request $request, $groupId = null)
+    {
+        $user = Auth::user();
+        if (!$user) {
+            return redirect()->route('login');
+        }
+
+        $groups = Group::whereHas('users', function ($query) use ($user) {
+            $query->where('user_id', $user->id);
+        })->get();
+
+        // $groupIdがあれば、$groupを取得する
+        if ($groupId) {
+            $group = Group::findOrFail($groupId);
+        } else {
+            $group = null;
+        }
+        return view('home')->with('groups', $groups)->with('group', $group);
     }
 
 
