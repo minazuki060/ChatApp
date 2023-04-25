@@ -42,14 +42,17 @@ class HomeController extends Controller
         // $groupIdがあれば、$groupを取得する
         if ($groupId) {
             $group = Group::findOrFail($groupId);
+            $messages = $group->messages()->with('user')->orderBy('created_at', 'desc')->paginate(10);
         } else {
             $group = null;
+            $messages = null;
         }
-        return view('home')->with('groups', $groups)->with('group', $group);
+        //compact() 関数は、指定した変数名の値を配列として返すPHPの組み込み関数
+        return view('home', compact('groups', 'group', 'messages'));
     }
 
 
-    public function store(Request $request, Group $group)
+    public function store(Request $request, $groupId = null)
     {
         //メッセージの保存処理を実装する
         $request->validate([
@@ -57,9 +60,9 @@ class HomeController extends Controller
         ]);
 
         $message = new Message();
-        $message->message = $request->input('message');
+        $message->text = $request->input('message');
         $message->user_id = Auth::id();
-        $message->group_id = $group->id;
+        $message->group_id = $groupId;
         $message->save();
 
         return redirect()->back();

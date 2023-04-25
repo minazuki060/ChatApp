@@ -31,7 +31,7 @@
                 <h1>{{ $group->name }}</h1>
                 @if(isset($messages) && is_countable($messages) && count($messages) > 0)
                     @foreach($messages as $message)
-                        <p>{{ $message->user->name }}: {{ $message->message }}</p>
+                        <p>{{ $message->user->name }}: {{ $message->text }}</p>
                     @endforeach
                 @else
                     <p>メッセージはありません。</p>

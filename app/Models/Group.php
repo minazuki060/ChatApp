@@ -15,9 +15,9 @@ class Group extends Model
         'name',
     ];
 
-    public function message()
+    public function messages()
     {
-        return $this->hasOne(Message::class);
+        return $this->hasMany(Message::class);
     }
 
     public function users()
