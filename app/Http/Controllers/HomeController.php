@@ -11,22 +11,8 @@ use \App\Models\Message;
 
 class HomeController extends Controller
 {
+
     //sideでトークルーム一覧を表示
-    public function showRoomList()
-    {
-        $user = Auth::user();
-        if (!$user) {
-            return redirect()->route('login');
-        }
-        $groups = Group::whereHas('users', function ($query) use ($user) {
-            $query->where('user_id', $user->id);
-        })->get();
-        $groups = $groups ?? []; // nullの場合は空の配列にする
-
-        return view('home', compact('groups'));
-    }
-
-
     //home/groupidでトークルームを一覧表示し、グループのメッセージを一覧表示する
     public function index(Request $request, $groupId = null)
     {
@@ -42,7 +28,7 @@ class HomeController extends Controller
         // $groupIdがあれば、$groupを取得する
         if ($groupId) {
             $group = Group::findOrFail($groupId);
-            $messages = $group->messages()->with('user')->orderBy('created_at', 'desc')->paginate(10);
+            $messages = $group->messages()->with('user')->orderBy('created_at', 'asc')->paginate(10);
         } else {
             $group = null;
             $messages = null;
