@@ -9,6 +9,7 @@
         </div> 
     </head>
 
+
     <main>
         <div class="side">
             <h1>グループ一覧</h1>
@@ -20,12 +21,13 @@
                 @else
                     <p>グループがありません。</p>
                 @endif
-                <a href="{{ route('group.create') }}">新しいグループを作成する</a>
             </ul>
+            <div class="new-group">
+                <a href="{{ route('group.create') }}">新しいグループを作成する</a>
+            </div>
         </div>
 
         <div class="content">
-            
             @if(isset($group))
                 <!-- メッセージがある場合の処理 -->
                 <h1>{{ $group->name }}</h1>

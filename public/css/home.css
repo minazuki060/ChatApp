@@ -5,32 +5,96 @@
   }
 
  .head {
-    background-color:#83fdff;
+    background-color:#75b8e8;
     height:100px;
+    font-size: 28px;
+    border-bottom: 3px solid black;
  }
 
 body {
     font-family:'Noto Sans JP',sans-serif;
     background-color:#f6f5f4;
  }
- 
+
+
+
  .side {
-   background-color:#ff838b;
+   background-color:#fff;
    width:30%;
-   height:100vh;
+   height:calc(100vh - 100px);
    text-align:center;
+   overflow: hidden; 
+   border-right: 3px solid #000;
+   position: relative;
  } 
- 
+
+ .side h1 {
+  background-color: #cae5f8;
+  color: #000;
+  padding: 10px;
+  margin: 0;
+}
+
+ /*四角で囲んで中央配置にする*/
+.new-group {
+  position: absolute;
+  bottom: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+  text-align: center;
+  border: 1px solid black;
+  padding: 10px;
+}
+
+/*文字の下線を消す*/
+.new-group a {
+  display: inline-block;
+  text-decoration: none;
+}
+
+
+
  .content {
-   background-color:#b3d874;
+   background-color:#fff;
    width:70%;
-   height:100vh;
+   height:calc(100vh - 100px);
    text-align:center;
+   overflow: hidden; 
+   position: relative;
  }
  
+ .content h1 {
+  background-color: #cae5f8;
+  color: #000;
+  padding: 10px;
+  margin: 0;
+}
+/*入力フォームを下部に配置*/
+/*左端を50%の位置に設定し、transformプロパティを使用して、左端を中央に移動させると、フォームが中央に配置される*/
+.content form {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  background-color: #cae5f8;
+  padding: 15px;
+  display: flex;
+  justify-content: center; /* 中央揃えを指定 */
+}
+.content form input[type="text"] {
+  margin-right: 10px;
+  height: 30px; /* 例：高さを20pxに指定 */
+  font-size: 16px; /* 例：フォントサイズを16pxに指定 */
+  padding: 5px;
+  width: 80%;
+}
+
+
    main {
     display: flex;
     flex-direction: row;/*サイドバーとメインコンテンツを横並びにする指定をした*/
+    position: relative;
  }
 
 
