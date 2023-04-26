@@ -63,6 +63,7 @@ class GroupController extends Controller
     {
         $request->validate([
             'name' => 'required|max:140',
+            'users' => 'required|array',
         ]);
 
         $group = new Group();

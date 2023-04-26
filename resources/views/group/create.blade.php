@@ -18,9 +18,9 @@
     <button type="submit">検索</button>
     </form>
 
-        <div class="form-group">
-        <form method="POST" action="{{ route('group.store') }}">
+    <form method="POST" action="{{ route('group.store') }}">
         @csrf
+        <div class="form-group">
             <label for="users[]">Select Users:</label>
             <select name="users[]" class="form-control" multiple required>
                 @foreach($users as $user)
@@ -30,11 +30,10 @@
         </div>
 
         <div class="form-group">
-        <label for="name">Room Name:</label>
-        <input type="text" name="name" class="form-control" required>
+            <label for="name">Room Name:</label>
+            <input type="text" name="name" class="form-control" required>
         </div>
 
         <button type="submit" class="btn btn-primary">作成する</button>
-        </form>
-    </div>
+    </form>
 </body>
