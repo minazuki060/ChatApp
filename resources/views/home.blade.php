@@ -33,7 +33,9 @@
                 <h1>{{ $group->name }}</h1>
                 @if(isset($messages) && is_countable($messages) && count($messages) > 0)
                     @foreach($messages as $message)
+                        <div class="message @if($message->user_id === Auth::id()) right @else left @endif">
                         <p>{{ $message->user->name }}: {{ $message->text }}</p>
+                        </div>
                     @endforeach
                 @else
                     <p>メッセージはありません。</p>

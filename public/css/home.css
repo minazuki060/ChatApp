@@ -18,6 +18,8 @@ body {
 
 
 
+
+
  .side {
    background-color:#fff;
    width:30%;
@@ -51,6 +53,8 @@ body {
   display: inline-block;
   text-decoration: none;
 }
+
+
 
 
 
@@ -96,6 +100,35 @@ body {
     flex-direction: row;/*サイドバーとメインコンテンツを横並びにする指定をした*/
     position: relative;
  }
+
+
+ 
+
+ 
+ .message {
+   display: flex;
+   align-items: center;
+   margin: 5px;
+   padding: 10px;
+   border-radius: 10px;
+   font-size: 16px;
+   max-width: 100%;
+ }
+
+ .left {
+   justify-content: flex-start;
+ }
+ .right {
+   justify-content: flex-end;
+ }
+ .left p {
+   margin-left: 10px;
+ }
+ .right p {
+  margin-right: 10px;
+  text-align: right;
+ }
+
 
 
  .sp-head {
