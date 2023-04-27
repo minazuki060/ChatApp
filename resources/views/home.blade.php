@@ -42,7 +42,7 @@
                 @endif
                 <form method="POST" action="{{ route('home.store', $group->id) }}">
                     @csrf
-                    <input type="text" name="message" placeholder="メッセージを入力してください">
+                    <textarea name="message" placeholder="メッセージを入力してください"></textarea>
                     <button type="submit">送信</button>
                 </form>
                 @else

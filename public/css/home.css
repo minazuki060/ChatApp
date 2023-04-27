@@ -82,14 +82,14 @@ body {
   display: flex;
   justify-content: center; /* 中央揃えを指定 */
 }
-.content form input[type="text"] {
+
+.content form textarea {
   margin-right: 10px;
-  height: 30px; /* 例：高さを20pxに指定 */
-  font-size: 16px; /* 例：フォントサイズを16pxに指定 */
+  font-size: 16px;
   padding: 5px;
   width: 80%;
+  height: 20px; /* 高さを指定 */
 }
-
 
    main {
     display: flex;
