@@ -18,8 +18,6 @@ body {
 
 
 
-
-
  .side {
    background-color:#fff;
    width:30%;
@@ -53,8 +51,6 @@ body {
   display: inline-block;
   text-decoration: none;
 }
-
-
 
 
 
@@ -103,8 +99,6 @@ body {
 
 
  
-
- 
  .message {
    display: flex;
    align-items: center;
@@ -113,8 +107,8 @@ body {
    border-radius: 10px;
    font-size: 16px;
    max-width: 100%;
+   word-wrap: break-word;
  }
-
  .left {
    justify-content: flex-start;
  }
@@ -123,13 +117,16 @@ body {
  }
  .left p {
    margin-left: 10px;
+   max-width: 30em;
  }
  .right p {
   margin-right: 10px;
   text-align: right;
+  max-width: 30em;
+  word-wrap: break-word;
  }
 
-
+ 
 
  .sp-head {
   background-color:#83fdff;
