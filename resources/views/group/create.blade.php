@@ -21,12 +21,13 @@
     <form method="POST" action="{{ route('group.store') }}">
         @csrf
         <div class="form-group">
-            <label for="users[]">Select Users:</label>
-            <select name="users[]" class="form-control" multiple required>
-                @foreach($users as $user)
-                    <option value="{{ $user->id }}">{{ $user->name }}</option>
-                @endforeach
-            </select>
+        <label for="users[]">Select Users:</label>
+        @foreach($users as $user)
+            <div class="form-check">
+                <input type="checkbox" id="user_{{ $user->id }}" name="users[]" value="{{ $user->id }}">
+                <label for="user_{{ $user->id }}">{{ $user->name }}</label>
+            </div>
+        @endforeach
         </div>
 
         <div class="form-group">
