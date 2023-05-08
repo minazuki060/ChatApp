@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
-<link rel="stylesheet" href="{{ asset('/css/search.css') }}">
+<link rel="stylesheet" href="{{ asset('/css/group.css') }}">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <head>
