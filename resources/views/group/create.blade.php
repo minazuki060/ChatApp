@@ -10,31 +10,40 @@
 </head>
 
 <body>
+    <div class="title">
     <h1>トークルーム作成</h1>
+    </div> 
     
+    <div class="search">
     <form method="GET" action="{{ route('group.create') }}">
     <label for="search">ともだちを検索:</label>
     <input type="search" placeholder="ユーザー名を入力" name="search" value="@if (isset($search)) {{ $search }} @endif">
     <button type="submit">検索</button>
     </form>
+    </div>
 
+    <div class="select">
     <form method="POST" action="{{ route('group.store') }}">
         @csrf
         <div class="form-group">
-        <label for="users[]">Select Users:</label>
+        <label for="users[]">ユーザーを選択:</label>
+        </div>
+        <div class="form-check">
         @foreach($users as $user)
-            <div class="form-check">
                 <input type="checkbox" id="user_{{ $user->id }}" name="users[]" value="{{ $user->id }}">
                 <label for="user_{{ $user->id }}">{{ $user->name }}</label>
-            </div>
         @endforeach
         </div>
+    </div>
 
-        <div class="form-group">
-            <label for="name">Room Name:</label>
+
+        <div class="room-name">
+            <label for="name">グループ名:</label>
             <input type="text" name="name" class="form-control" required>
         </div>
 
-        <button type="submit" class="btn btn-primary">作成する</button>
+        <div class="button">
+            <button type="submit" class="btn btn-primary">作成する</button>
+        </div>
     </form>
 </body>
