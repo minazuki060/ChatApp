@@ -79,14 +79,14 @@ body {
  
  /*入力フォームを下部に配置*/
  .pc-content form {
-   position: sticky;
+   position: fixed;
    bottom: 0;
-   width: 100%;
+   width: 70%;
    background-color: #cae5f8;
    padding: 15px;
    display: flex;
+   margin-top: 100px;
    justify-content: center; /* 中央揃えを指定 */
-   z-index: 1;
  }
  
  .pc-content form textarea {
@@ -133,8 +133,12 @@ body {
    word-wrap: break-word;
   }
   
+ .pc-push {
+  height: 65px;/*formとメッセージが被らないように空白を作る*/
+}
 
- 
+
+
 /* ここからsp画面*/
  .sp-head {
     background-color:#021a2d;
@@ -158,8 +162,8 @@ body {
   background-color: #032744;
   color: white;
   font-size: 24px;
- padding: 10px;
- margin: 0;
+  padding: 10px;
+  margin: 0;
 }
 
 /*四角で囲んで中央配置にする*/
@@ -191,26 +195,36 @@ body {
   overflow-y: auto; /* メッセージを縦方向にスクロール可能にする */
 }
 
+
 .sp-content h1 {
   position: sticky;
-   top: 0;
-   background-color: #032744;
-   padding: 10px;
-   margin: 0;
-   color: white;
-   font-size: 24px;
-   z-index: 1;
+  top: 0;
+  background-color: #032744;
+  padding: 10px;
+  margin: 0;
+  color: white;
+  font-size: 24px;
+  z-index: 1;
+  margin-right: auto;
 }
+
+.sp-content h1 a {
+  float: left;
+  font-size: 16px;
+  display: inline-block;
+  text-decoration: none;
+  color: white;
+}
+
 /*入力フォームを下部に配置*/
 .sp-content form {
-  position: sticky;
+  position: fixed;
   bottom: 0;
   width: 100%;
   background-color: #cae5f8;
   padding: 15px 0;
   display: flex;
   justify-content: center; /* 中央揃えを指定 */
-  z-index: 1;
 }
 
 .sp-content form textarea {
@@ -246,6 +260,10 @@ body {
  text-align: right;
  max-width: 12em;
  word-wrap: break-word;
+}
+
+.sp-push {
+  height: 65px;/*formとメッセージが被らないように空白を作る*/
 }
 
 

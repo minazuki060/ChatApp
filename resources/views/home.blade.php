@@ -37,6 +37,7 @@
                         <p>{{ $message->user->name }}: {{ $message->text }}</p>
                         </div>
                     @endforeach
+                    <div class="pc-push"></div><!-- コンテンツ内に空の要素(.push)を加える -->
                 @else
                     <p>メッセージはありません。</p>
                 @endif
@@ -80,13 +81,14 @@
         <div class="sp-content">
         @if(isset($group))
             <!-- メッセージがある場合の処理 -->
-            <h1>{{ $group->name }}</h1>
+            <h1><a href="{{ route('home.index') }}">＜戻る</a> {{ $group->name }}</h1>
             @if(isset($messages) && is_countable($messages) && count($messages) > 0)
                 @foreach($messages as $message)
                     <div class="sp-message @if($message->user_id === Auth::id()) sp-right @else sp-left @endif">
                     <p>{{ $message->user->name }}: {{ $message->text }}</p>
                     </div>
                 @endforeach
+                <div class="sp-push"></div><!-- コンテンツ内に空の要素(.push)を加える -->
             @else
                 <p>メッセージはありません。</p>
             @endif
