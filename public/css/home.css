@@ -5,10 +5,12 @@
   }
 
  .pc-head {
-    background-color:#75b8e8;
-    height:100px;
-    font-size: 28px;
-    border-bottom: 3px solid rgb(205, 202, 202);
+    background-color:#021a2d;
+    height:60px;
+    font-size: 14px;
+    color: white;
+    display: flex;
+    align-items: center;
  }
 
 body {
@@ -21,7 +23,7 @@ body {
  .pc-side {
    background-color:#fff;
    width:30%;
-   height:calc(100vh - 100px);
+   height:calc(100vh - 60px);
    text-align:center;
    overflow: hidden; 
    border-right: 5px solid #e3dfdf;
@@ -29,10 +31,11 @@ body {
  } 
 
  .pc-side h1 {
-  background-color: #cae5f8;
-  color: #000;
+  background-color: #032744;
   padding: 10px;
   margin: 0;
+  color: white;
+  font-size: 24px;
 }
 
  /*四角で囲んで中央配置にする*/
@@ -53,102 +56,108 @@ body {
 }
 
 
-
  .pc-content {
    background-color:#fff;
    width:70%;
-   height:calc(100vh - 100px);
+   height:calc(100vh - 60px);
    text-align:center;
    overflow: hidden; 
    position: relative;
- }
- 
- .pc-content h1 {
-  background-color: #cae5f8;
-  color: #000;
-  padding: 10px;
-  margin: 0;
-}
-/*入力フォームを下部に配置*/
-/*左端を50%の位置に設定し、transformプロパティを使用して、左端を中央に移動させると、フォームが中央に配置される*/
-.pc-content form {
-  position: absolute;
-  bottom: 0;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 100%;
-  background-color: #cae5f8;
-  padding: 15px;
-  display: flex;
-  justify-content: center; /* 中央揃えを指定 */
-}
-
-.pc-content form textarea {
-  margin-right: 10px;
-  font-size: 16px;
-  padding: 5px;
-  width: 80%;
-  height: 20px; /* 高さを指定 */
-}
-
-  main {
-    display: flex;
-    flex-direction: row;/*サイドバーとメインコンテンツを横並びにする指定をした*/
-    position: relative;
- }
-
-
- 
- .pc-message {
-   display: flex;
-   align-items: center;
-   margin: 5px;
+   overflow-y: auto; /* メッセージを縦方向にスクロール可能にする */
+  }
+  
+  .pc-content h1 {
+   position: sticky;
+   top: 0;
+   background-color: #032744;
    padding: 10px;
-   border-radius: 10px;
+   margin: 0;
+   color: white;
+   font-size: 24px;
+   z-index: 1;
+ }
+ 
+ /*入力フォームを下部に配置*/
+ .pc-content form {
+   position: sticky;
+   bottom: 0;
+   width: 100%;
+   background-color: #cae5f8;
+   padding: 15px;
+   display: flex;
+   justify-content: center; /* 中央揃えを指定 */
+   z-index: 1;
+ }
+ 
+ .pc-content form textarea {
+   margin-right: 10px;
    font-size: 16px;
-   max-width: 100%;
-   word-wrap: break-word;
+   padding: 5px;
+   width: 80%;
+   height: 20px; /* 高さを指定 */
  }
- .pc-left {
-   justify-content: flex-start;
- }
- .pc-right {
-   justify-content: flex-end;
- }
- .pc-left p {
-   margin-left: 10px;
+ 
+ main{
+  display: flex;
+  flex-direction: row;/*サイドバーとメインコンテンツを横並びにする指定をした*/
+  position: relative; 
+}
+ 
+ 
+  
+  .pc-message {
+    display: flex;
+    align-items: center;
+    margin: 5px;
+    padding: 10px;
+    border-radius: 10px;
+    font-size: 16px;
+    max-width: 100%;
+    word-wrap: break-word;
+    overflow-y: auto; /* メッセージを縦方向にスクロール可能にする */
+  }
+  .pc-left {
+    justify-content: flex-start;
+  }
+  .pc-right {
+    justify-content: flex-end;
+  }
+  .pc-left p {
+    margin-left: 10px;
+    max-width: 30em;
+  }
+  .pc-right p {
+   margin-right: 10px;
+   text-align: right;
    max-width: 30em;
- }
- .pc-right p {
-  margin-right: 10px;
-  text-align: right;
-  max-width: 30em;
-  word-wrap: break-word;
- }
-
+   word-wrap: break-word;
+  }
+  
 
  
 /* ここからsp画面*/
  .sp-head {
-  background-color:#75b8e8;
-    height:100px;
-    font-size: 28px;
-    border-bottom: 3px solid rgb(205, 202, 202);
+    background-color:#021a2d;
+    height:60px;
+    font-size: 14px;
+    color: white;
+    display: flex;
+    align-items: center;
 }
 
 .sp-side {
   background-color:#fff;
   width:100%;
-  height:calc(100vh - 100px);
+  height:calc(100vh - 60px);
   text-align:center;
   overflow: hidden; 
-  border-right: 5px solid #e3dfdf;
   position: relative;
 } 
 
 .sp-side h1 {
- background-color: #cae5f8;
- color: #000;
+  background-color: #032744;
+  color: white;
+  font-size: 24px;
  padding: 10px;
  margin: 0;
 }
@@ -175,30 +184,33 @@ body {
 .sp-content {
   background-color:#fff;
   width:100%;
-  height:calc(100vh - 100px);
+  height:calc(100vh - 60px);
   text-align:center;
   overflow: hidden; 
   position: relative;
+  overflow-y: auto; /* メッセージを縦方向にスクロール可能にする */
 }
 
 .sp-content h1 {
- background-color: #cae5f8;
- color: #000;
- padding: 10px;
- margin: 0;
+  position: sticky;
+   top: 0;
+   background-color: #032744;
+   padding: 10px;
+   margin: 0;
+   color: white;
+   font-size: 24px;
+   z-index: 1;
 }
 /*入力フォームを下部に配置*/
-/*左端を50%の位置に設定し、transformプロパティを使用して、左端を中央に移動させると、フォームが中央に配置される*/
 .sp-content form {
- position: absolute;
- bottom: 0;
- left: 50%;
- transform: translateX(-50%);
- width: 100%;
- background-color: #cae5f8;
- padding: 15px;
- display: flex;
- justify-content: center; /* 中央揃えを指定 */
+  position: sticky;
+  bottom: 0;
+  width: 100%;
+  background-color: #cae5f8;
+  padding: 15px 0;
+  display: flex;
+  justify-content: center; /* 中央揃えを指定 */
+  z-index: 1;
 }
 
 .sp-content form textarea {

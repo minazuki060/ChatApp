@@ -28,7 +28,7 @@ class HomeController extends Controller
         // $groupIdがあれば、$groupを取得する
         if ($groupId) {
             $group = Group::findOrFail($groupId);
-            $messages = $group->messages()->with('user')->orderBy('created_at', 'asc')->paginate(10);
+            $messages = $group->messages()->with('user')->orderBy('created_at', 'asc')->get();
         } else {
             $group = null;
             $messages = null;
