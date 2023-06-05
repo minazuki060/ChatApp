@@ -5,7 +5,16 @@
  <div class="pc">
     <head>
         <div class="pc-head">
-         <h1>ChatApp</h1>
+            <h1>ChatApp</h1>
+            <div class="pc-user-info">
+            @auth
+                <span>{{ auth()->user()->name }}</span>
+                <form action="{{ route('logout') }}" method="POST">
+                    @csrf
+                    <button type="submit">ログアウト</button>
+                </form>
+                @endauth
+            </div>
         </div> 
     </head>
 
@@ -58,6 +67,15 @@
     <head>
      <div class="sp-head">
         <h1>ChatApp</h1>
+        <div class="sp-user-info">
+            @auth
+                <span>{{ auth()->user()->name }}</span>
+                <form action="{{ route('logout') }}" method="POST">
+                    @csrf
+                    <button type="submit">ログアウト</button>
+                </form>
+                @endauth
+        </div>
      </div>
     </head>
 

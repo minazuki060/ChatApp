@@ -11,7 +11,24 @@
     color: white;
     display: flex;
     align-items: center;
+    justify-content: space-between;
  }
+
+ .pc-user-info {
+  margin-left: auto;
+  color: white;
+  display: flex;
+  align-items: center;
+}
+
+.pc-user-info button {
+  background: none;
+  border: none;
+  padding: 5px;
+  cursor: pointer;
+  color: white;
+  margin-left: 5px;
+}
 
 body {
     font-family:'Noto Sans JP',sans-serif;
@@ -147,6 +164,23 @@ body {
     color: white;
     display: flex;
     align-items: center;
+    justify-content: space-between;
+}
+
+.sp-user-info {
+  margin-left: auto;
+  color: white;
+  display: flex;
+  align-items: center;
+}
+
+.sp-user-info button {
+  background: none;
+  border: none;
+  padding: 5px;
+  cursor: pointer;
+  color: white;
+  margin-left: 5px;
 }
 
 .sp-side {

@@ -6,6 +6,15 @@
 <head>
     <div class="head">
      <h1>ChatApp</h1>
+        <div class="user-info">
+            @auth
+                <span>{{ auth()->user()->name }}</span>
+                <form action="{{ route('logout') }}" method="POST">
+                    @csrf
+                    <button type="submit">ログアウト</button>
+                </form>
+            @endauth
+        </div>
     </div> 
 </head>
 
