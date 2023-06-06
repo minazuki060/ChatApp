@@ -43,7 +43,8 @@
                 @if(isset($messages) && is_countable($messages) && count($messages) > 0)
                     @foreach($messages as $message)
                     <div class="pc-message @if($message->user_id === Auth::id()) pc-right @else pc-left @endif">
-                        <p>{{ $message->user->name }}: {{ $message->text }}</p>
+                    <p>{{ $message->user->name }}:</p>
+                    <p>{{ $message->text }}</p>
                         </div>
                     @endforeach
                     <div class="pc-push"></div><!-- コンテンツ内に空の要素(.push)を加える -->
@@ -103,7 +104,8 @@
             @if(isset($messages) && is_countable($messages) && count($messages) > 0)
                 @foreach($messages as $message)
                     <div class="sp-message @if($message->user_id === Auth::id()) sp-right @else sp-left @endif">
-                    <p>{{ $message->user->name }}: {{ $message->text }}</p>
+                    <p>{{ $message->user->name }}:</p>
+                    <p>{{ $message->text }}</p>
                     </div>
                 @endforeach
                 <div class="sp-push"></div><!-- コンテンツ内に空の要素(.push)を加える -->

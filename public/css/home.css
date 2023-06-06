@@ -124,7 +124,6 @@ body {
   
   .pc-message {
     display: flex;
-    align-items: center;
     margin: 5px;
     padding: 10px;
     border-radius: 10px;
@@ -132,6 +131,7 @@ body {
     max-width: 100%;
     word-wrap: break-word;
     overflow-y: auto; /* メッセージを縦方向にスクロール可能にする */
+    justify-content: space-between;
   }
   .pc-left {
     justify-content: flex-start;
@@ -140,16 +140,19 @@ body {
     justify-content: flex-end;
   }
   .pc-left p {
-    margin-left: 10px;
+    margin-right: 8px;
     max-width: 30em;
+    white-space: pre-wrap; /* テキスト内の改行を維持し、スペースも維持 */
   }
   .pc-right p {
-   margin-right: 10px;
-   text-align: right;
+   margin-right: 8px;
+   text-align: left;
    max-width: 30em;
-   word-wrap: break-word;
+   white-space: pre-wrap; /* テキスト内の改行を維持し、スペースも維持 */
   }
   
+  
+
  .pc-push {
   height: 65px;/*formとメッセージが被らないように空白を作る*/
 }
@@ -273,13 +276,13 @@ body {
 
 .sp-message {
   display: flex;
-  align-items: center;
-  margin: 5px;
+  margin: 2px;
   padding: 10px;
   border-radius: 10px;
   font-size: 16px;
   max-width: 100%;
   word-wrap: break-word;
+  justify-content: space-between;
 }
 .sp-left {
   justify-content: flex-start;
@@ -288,12 +291,15 @@ body {
   justify-content: flex-end;
 }
 .sp-left p {
-  max-width: 30em;
+  margin-right: 3px;
+  max-width: 12em;
+  white-space: pre-wrap; /* テキスト内の改行を維持し、スペースも維持 */
 }
 .sp-right p {
- text-align: right;
+ margin-right: 3px;
+ text-align: left;
  max-width: 12em;
- word-wrap: break-word;
+ white-space: pre-wrap; /* テキスト内の改行を維持し、スペースも維持 */
 }
 
 .sp-push {
